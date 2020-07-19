@@ -1,0 +1,61 @@
+<div class="wrapper fadeinDown">
+  <div id="formContent">
+    <h2 class="active"> Log-In </h2>  
+    <form  [formGroup]="registerForm" (ngSubmit)="onSubmit(registerForm)" novalidate>
+
+        <input type="text" id="login" class="fadeIn second"  placeholder="Login" formControlName="login" required>
+        <div *ngIf="registerForm.controls['login'].invalid && (registerForm.controls['login'].dirty || registerForm.controls['login'].touched)">
+          <div *ngIf="registerForm.controls['login'].errors.required">
+          <p>login is required.</p>
+          </div>
+        </div>
+        
+   
+        <input type="text" id="password" class="fadeIn third"  placeholder="Password" formControlName="password" required>
+        <div *ngIf="registerForm.controls['password'].invalid && (registerForm.controls['password'].dirty || registerForm.controls['password'].touched)">
+          <div *ngIf="registerForm.controls['password'].errors.required">
+            <p>Password is required</p>
+          </div>
+        </div>
+
+       <input type="submit" class="fadeIn fourth" [disabled]="registerForm.pristine || registerForm.invalid"  routerLink="/dashboard" value="Log-In" >
+    </form>
+    <!-- <p>Form value: {{ registerForm.value | json }}</p> -->
+    <div id="formFooter">
+      <!-- Button trigger modal -->
+      <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+        Forget Password
+      </button> -->
+      <input type="submit" class="fadeIn fourth" data-toggle="modal" data-target="#exampleModal" value="Forget-Password" >
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Send My Password</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <input type="text" id="email" class="fadeIn"  placeholder="E-mail" formControlName="email" required>
+                <div *ngIf="registerForm.controls['email'].invalid && (registerForm.controls['email'].dirty || registerForm.controls['email'].touched)">
+                  <div *ngIf="registerForm.controls['email'].errors.required">
+                  <p>E-mail is required.</p>
+                  </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <input type="submit" class="fadeIn fourth" data-toggle="modal" data-target="dashboard" value="Forget-Password" >
+              <!-- <button type="button" class="btn btn-primary" >Save changes</button> -->
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div> 
+  </div>
+</div> 
+
+
+

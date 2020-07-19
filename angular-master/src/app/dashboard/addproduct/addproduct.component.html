@@ -1,0 +1,42 @@
+<app-head></app-head>
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <h2 class="active"> Add-Product </h2>
+    <!-- Login Form -->
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" novalidate>
+
+      <input type="text" id="id" class="fadeIn third"  placeholder="Product-id" formControlName="id" required>
+      <div *ngIf="registerForm.controls['id'].invalid && (registerForm.controls['id'].dirty || registerForm.controls['id'].touched)">
+        <div *ngIf="registerForm.controls['id'].errors.required">
+        <p>Product-id is required.</p>
+        </div>
+      </div>
+
+      <input type="text" id="name" class="fadeIn third"  placeholder="Product-Name" formControlName="name" required>
+      <div *ngIf="registerForm.controls['name'].invalid && (registerForm.controls['name'].dirty || registerForm.controls['name'].touched)">
+        <div *ngIf="registerForm.controls['name'].errors.required">
+        <p>Product-Name is required.</p>
+        </div>
+      </div>
+      
+      <input type="text" id="desc" class="fadeIn second" placeholder="Product-Description" formControlName="desc" required>
+      <div *ngIf="registerForm.controls['desc'].invalid && (registerForm.controls['desc'].dirty || registerForm.controls['desc'].touched)">
+        <div *ngIf="registerForm.controls['desc'].errors.required" >
+          <p>Product-Description is required.</p>
+        </div>
+    </div>
+
+      <input type="text" id="img" class="fadeIn third"  placeholder="Product-Image" formControlName="img" required>
+        <div *ngIf="registerForm.controls['img'].invalid && (registerForm.controls['img'].dirty || registerForm.controls['img'].touched)">
+          <div *ngIf="registerForm.controls['img'].errors.required">
+            <p>Product-Image is required.</p>
+          </div>
+        </div>
+
+      <input type="submit" class="fadeIn fourth" [disabled]="registerForm.pristine||registerForm.invalid" value="Add-Product">
+      
+    </form>
+  </div>
+</div>
+
+<app-foot></app-foot>

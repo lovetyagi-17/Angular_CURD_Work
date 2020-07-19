@@ -1,0 +1,91 @@
+body { margin:0; }
+
+
+.header .top_bar{
+	background-color:#eaeaea;
+	height:40px;
+	margin:0;
+
+}
+.header .top_bar ul {
+float:right;
+  margin: 0;
+padding-top:10px;
+padding-right: 70px;
+  
+}
+.header .top_bar li {
+  display: inline;
+  margin: 0;
+  padding-top: 10px;
+padding-right: 10px;
+text-decoration: None;
+font-size: 15px;
+color:grey;
+}
+
+.header .top_bar a {
+color:grey;
+text-decoration: None;
+}
+
+.header .top_bar a:hover {
+  color:red;
+  }
+
+
+
+
+.header .nav_bar{
+  background-color:white;
+  height:80px;
+  margin:0;
+  padding:0;
+  box-shadow: 0px 1px 5px grey;
+}
+
+.header .nav_bar .logo{
+  display: inline;
+  float: left;
+  padding-left: 100px;
+  padding-top: 12px;
+  margin: 0;
+  
+}
+.header .nav_bar .logo img{
+  height:70%;
+  width:70%;
+}
+
+
+
+
+.header .nav_bar .nav_menus {
+  float:right;
+    margin: 0;
+  padding-top:25px;
+  padding-right: 60px;
+    
+  }
+  .header .nav_bar .nav_menus li {
+    display: inline;
+    margin: 0;
+    padding-top: 10px;
+  padding-right: 20px;
+  text-decoration: None;
+  font-size: 15px;
+  font-weight: 600;
+  color:grey;
+  }
+  
+  .header .nav_bar .nav_menus a {
+  color:grey;
+  text-decoration: None;
+  }
+  .header .nav_bar .nav_menus a:hover {
+  color:red;
+  }
+  .header .nav_bar .nav_menus .active{
+  color: red;
+  text-decoration: None;
+  }

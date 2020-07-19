@@ -1,0 +1,51 @@
+<app-head></app-head>
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <h2 class="active"> Add-User </h2>
+    <!-- Login Form -->
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" novalidate>
+
+      <input type="text" id="first-name" class="fadeIn third"  placeholder="First-Name" formControlName="firstname" required>
+      <div *ngIf="registerForm.controls['firstname'].invalid && (registerForm.controls['firstname'].dirty || registerForm.controls['firstname'].touched)">
+        <div *ngIf="registerForm.controls['firstname'].errors.required">
+        <p>First-Name is required.</p>
+        </div>
+        <div *ngIf="registerForm.controls['firstname'].errors.minlength">
+          <p>First-Name must be at least 3 characters long.</p>
+        </div>
+      </div>
+
+      <input type="text" id="last-name" class="fadeIn third"  placeholder="Last-Name" formControlName="lastname" required>
+      <div *ngIf="registerForm.controls['lastname'].invalid && (registerForm.controls['lastname'].dirty || registerForm.controls['lastname'].touched)">
+        <div *ngIf="registerForm.controls['lastname'].errors.required">
+        <p>Last-Name is required.</p>
+        </div>
+        <div *ngIf="registerForm.controls['lastname'].errors.minlength">
+          <p>Last-Name must be at least 3 characters long.</p>
+          </div>
+      </div>
+      
+      <input type="text" id="email" class="fadeIn second" placeholder="E-mail" formControlName="email" required>
+      <div *ngIf="registerForm.controls['email'].invalid && (registerForm.controls['email'].dirty || registerForm.controls['email'].touched)">
+        <div *ngIf="registerForm.controls['email'].errors.required" >
+          <p>Email is required.</p>
+        </div>
+    </div>
+
+      <input type="text" id="password" class="fadeIn third"  placeholder="Password" formControlName="password" required>
+        <div *ngIf="registerForm.controls['password'].invalid && (registerForm.controls['password'].dirty || registerForm.controls['password'].touched)">
+          <div *ngIf="registerForm.controls['password'].errors.required">
+            <p>Password is required.</p>
+          </div>
+          <div *ngIf="registerForm.controls['password'].errors.minlength">
+            <p>Password must be more than 6 characters</p>
+            </div>
+        </div>
+
+      <input type="submit" class="fadeIn fourth" [disabled]="registerForm.pristine||registerForm.invalid" value="Add-User">
+      
+    </form>
+  </div>
+</div>
+
+<app-foot></app-foot>

@@ -1,0 +1,26 @@
+<app-head></app-head>
+<button routerLink ="/dashboard/addproduct">Add Product</button>
+<div class="container">
+  <table class="table table-striped">
+    <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Desc</th>
+          <th>Image</th>
+        </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of data; let i = index">
+        <td>{{ data._id }}</td>
+        <td>{{ data.p_name }}</td>
+        <td>{{ data.p_desc}}</td>
+        <td>{{ data.p_image}}</td>
+        <td><button type="button" class="btn btn-danger">View</button>
+          <button type="button" class="btn btn-warning">Edit</button>
+          <button type="button" class="btn btn-info"  (click)="delete(data._id)">Delete</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<app-foot></app-foot>

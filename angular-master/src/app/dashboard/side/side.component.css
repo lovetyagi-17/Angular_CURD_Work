@@ -1,0 +1,22 @@
+
+  table
+  {
+      margin:80px auto;
+      width:60%;
+  }
+  a
+  {
+      color:white;
+  }
+  form
+  {
+      padding:30px;
+      width:40%;
+      box-shadow: 0px 2px 5px 10px black;
+      margin:40px auto;
+  }
+  button
+  {
+      margin-left:4px;
+  }
+  

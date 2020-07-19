@@ -1,0 +1,27 @@
+header .container li{
+	padding-top:20px;
+	padding-bottom: 20px;
+	border-top:4px solid #f8f9fa;
+}
+
+header .container img{
+	padding-top:15px;
+	padding-bottom: 20px;
+}
+
+
+header .container li:hover{ 
+	border-top:4px solid chocolate;
+}
+
+header{
+	box-shadow: 0px 0px 5px 0px ;
+	background-color: #f8f9fa;
+}
+
+header .container ul li a{
+	color:black ;
+    }
+
+
+    

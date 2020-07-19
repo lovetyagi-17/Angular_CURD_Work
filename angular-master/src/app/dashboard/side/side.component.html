@@ -1,0 +1,28 @@
+<app-head></app-head>
+<button routerLink ="/dashboard/adduser">Add User</button>
+<div class="container">
+    <table class="table table-striped">
+      <thead>
+          <tr>
+            <th>ID</th>
+            <th>First-Name</th>
+            <th>Last-Name</th>
+            <th>E-mail</th>
+          </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let data  of data; let i = index">
+            <td>{{data._id }}</td>
+            <td>{{data.f_name }}</td>
+            <td>{{ data.l_name }}</td>
+            <td>{{ data.email}}</td>
+            <td><button type="button" class="btn btn-danger">View</button>
+              <button type="button" class="btn btn-warning">Edit</button>
+              <button type="button" class="btn btn-info"  (click)="delete(data._id)">Delete</button></td>
+            <!-- <button routerLink ="/dashboard/user">Edit</button>
+            <button routerLink ="/dashboard/user">Delete</button>   -->
+        </tr>
+      </tbody>
+    </table>
+  </div>
+<app-foot></app-foot>
